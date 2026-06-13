@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en"><head><script src="/_sdk/telemetry_sdk.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoNestBag Discounts</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+    .modal-backdrop { background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); }
+    .modal-enter { animation: slideUp 0.4s ease-out; }
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up-delay-1 { transition-delay: 0.1s; }
+    .fade-up-delay-2 { transition-delay: 0.2s; }
+    .fade-up-delay-3 { transition-delay: 0.3s; }
+    .fade-up-delay-4 { transition-delay: 0.4s; }
+    .glass-card {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.6);
+    }
+    .step-icon {
+      background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+      box-shadow: 0 4px 14px rgba(22,163,74,0.15);
+    }
+  </style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/resizing_sdk.js" type="text/javascript"></script>
+ </head>
+ <body data-template-id="__page-root" class="min-h-screen w-full" style="background: rgb(255, 255, 255);"><!-- Hero Section -->
+  <header class="relative overflow-hidden">
+   <div class="absolute inset-0"><img data-template-id="hero-bg" class="canva-image w-full h-full object-cover" loading="lazy" src="https://images.pexels.com/photos/4729444/pexels-photo-4729444.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280" alt="Eco friendly bag with green print hanging on branch of green tree with flowers">
+    <div class="absolute inset-0 bg-gradient-to-br from-green-950/85 via-green-900/70 to-emerald-800/50"></div>
+   </div>
+   <div class="relative max-w-5xl mx-auto px-4 py-20 sm:px-6 sm:py-28 md:py-40 text-center">
+    <h1 data-template-id="hero-title" class="canva-text text-white font-bold mb-4" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 36px;">EcoNestBag Discounts</h1>
+    <p data-template-id="hero-subtitle" class="canva-text text-green-100 max-w-2xl mx-auto mb-8" style="color: rgb(220, 252, 231); font-weight: 400; font-style: normal; font-size: 18px;">Carry your EcoNestBag and enjoy exclusive discounts from our partner shops.</p><button data-template-id="hero-cta" class="canva-button px-8 py-3.5 rounded-full font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition-all" onclick="document.getElementById('shops').scrollIntoView({behavior:'smooth'})" style="background: rgb(255, 255, 255); color: rgb(22, 101, 52); font-weight: 600; font-style: normal; font-size: 16px;">View Discount Shops</button>
+   </div>
+  </header><!-- How It Works -->
+  <section data-template-id="how-section" class="canva-section py-16 sm:py-20 px-4 sm:px-6" style="background: rgb(240, 253, 244);">
+   <div class="max-w-5xl mx-auto">
+    <h2 data-template-id="how-title" class="canva-text text-center font-bold mb-10 sm:mb-14 fade-up" style="color: rgb(20, 83, 45); font-weight: 700; font-style: normal; font-size: 24px;">How It Works</h2>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8 text-center">
+     <div class="fade-up fade-up-delay-1">
+      <div class="step-icon w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center text-green-700"><i data-lucide="shopping-bag" class="w-7 h-7"></i>
+      </div>
+      <p data-template-id="step-1" class="canva-text font-medium text-sm sm:text-base" style="color: rgb(22, 101, 52); font-weight: 400; font-style: normal; font-size: 16px;">Step 1: Buy an EcoNestBag</p>
+     </div>
+     <div class="fade-up fade-up-delay-2">
+      <div class="step-icon w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center text-green-700"><i data-lucide="smartphone" class="w-7 h-7"></i>
+      </div>
+      <p data-template-id="step-2" class="canva-text font-medium text-sm sm:text-base" style="color: rgb(22, 101, 52); font-weight: 400; font-style: normal; font-size: 16px;">Step 2: Tap the NFC tag</p>
+     </div>
+     <div class="fade-up fade-up-delay-3">
+      <div class="step-icon w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center text-green-700"><i data-lucide="check-circle" class="w-7 h-7"></i>
+      </div>
+      <p data-template-id="step-3" class="canva-text font-medium text-sm sm:text-base" style="color: rgb(22, 101, 52); font-weight: 400; font-style: normal; font-size: 16px;">Step 3: Show the verified page</p>
+     </div>
+     <div class="fade-up fade-up-delay-4">
+      <div class="step-icon w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center text-green-700"><i data-lucide="percent" class="w-7 h-7"></i>
+      </div>
+      <p data-template-id="step-4" class="canva-text font-medium text-sm sm:text-base" style="color: rgb(22, 101, 52); font-weight: 400; font-style: normal; font-size: 16px;">Step 4: Get your discount</p>
+     </div>
+    </div>
+   </div>
+  </section><!-- Partner Shops -->
+  <main id="shops" class="max-w-5xl mx-auto px-4 sm:px-6 py-14 sm:py-20">
+   <h2 data-template-id="shops-title" class="canva-text text-center font-bold mb-10 sm:mb-14 fade-up" style="color: rgb(20, 83, 45); font-weight: 700; font-style: normal; font-size: 24px;">Partner Shops</h2>
+   <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+    <div data-template-id="shop-1-card" class="canva-card glass-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-up fade-up-delay-1" style="background: rgb(255, 255, 255);"><img data-template-id="shop-1-img" class="canva-image w-full h-28 sm:h-40 object-cover" loading="lazy" src="https://images.pexels.com/photos/9705821/pexels-photo-9705821.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Fresh vegetables at a supermarket display">
+     <div class="p-3.5 sm:p-5">
+      <h3 data-template-id="shop-1-name" class="canva-text font-semibold mb-1 text-sm sm:text-base" style="color: rgb(17, 24, 39); font-weight: 600; font-style: normal; font-size: 19px;">Green Mart</h3>
+      <p data-template-id="shop-1-discount" class="canva-text font-bold mb-1 text-sm sm:text-base" style="color: rgb(22, 163, 74); font-weight: 700; font-style: normal; font-size: 16px;">10% Discount</p>
+      <p data-template-id="shop-1-location" class="canva-text text-xs sm:text-sm mb-1" style="color: rgb(107, 114, 128); font-weight: 400; font-style: normal; font-size: 16px;">📍 Malé</p>
+      <p data-template-id="shop-1-condition" class="canva-text text-xs hidden sm:block" style="color: rgb(156, 163, 175); font-weight: 400; font-style: normal; font-size: 16px;">Valid on groceries</p>
+     </div>
+    </div>
+    <div data-template-id="shop-2-card" class="canva-card glass-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-up fade-up-delay-2" style="background: rgb(255, 255, 255);"><img data-template-id="shop-2-img" class="canva-image w-full h-28 sm:h-40 object-cover" loading="lazy" src="https://images.pexels.com/photos/914390/pexels-photo-914390.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="A serene indoor café with a view of the ocean">
+     <div class="p-3.5 sm:p-5">
+      <h3 data-template-id="shop-2-name" class="canva-text font-semibold mb-1 text-sm sm:text-base" style="color: rgb(17, 24, 39); font-weight: 600; font-style: normal; font-size: 19px;">Ocean Café</h3>
+      <p data-template-id="shop-2-discount" class="canva-text font-bold mb-1 text-sm sm:text-base" style="color: rgb(22, 163, 74); font-weight: 700; font-style: normal; font-size: 16px;">15% Discount</p>
+      <p data-template-id="shop-2-location" class="canva-text text-xs sm:text-sm mb-1" style="color: rgb(107, 114, 128); font-weight: 400; font-style: normal; font-size: 16px;">📍 Hulhumalé</p>
+      <p data-template-id="shop-2-condition" class="canva-text text-xs hidden sm:block" style="color: rgb(156, 163, 175); font-weight: 400; font-style: normal; font-size: 16px;">Valid on dine-in orders</p>
+     </div>
+    </div>
+    <div data-template-id="shop-3-card" class="canva-card glass-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-up fade-up-delay-3" style="background: rgb(255, 255, 255);"><img data-template-id="shop-3-img" class="canva-image w-full h-28 sm:h-40 object-cover" loading="lazy" src="https://images.pexels.com/photos/3735182/pexels-photo-3735182.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Wooden shelves displaying eco-friendly reusable products in a zero-waste store">
+     <div class="p-3.5 sm:p-5">
+      <h3 data-template-id="shop-3-name" class="canva-text font-semibold mb-1 text-sm sm:text-base" style="color: rgb(17, 24, 39); font-weight: 600; font-style: normal; font-size: 19px;">Eco Store</h3>
+      <p data-template-id="shop-3-discount" class="canva-text font-bold mb-1 text-sm sm:text-base" style="color: rgb(22, 163, 74); font-weight: 700; font-style: normal; font-size: 16px;">20% Discount</p>
+      <p data-template-id="shop-3-location" class="canva-text text-xs sm:text-sm mb-1" style="color: rgb(107, 114, 128); font-weight: 400; font-style: normal; font-size: 16px;">📍 Malé</p>
+      <p data-template-id="shop-3-condition" class="canva-text text-xs hidden sm:block" style="color: rgb(156, 163, 175); font-weight: 400; font-style: normal; font-size: 16px;">Valid on eco products</p>
+     </div>
+    </div>
+    <div data-template-id="shop-4-card" class="canva-card glass-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-up fade-up-delay-4" style="background: rgb(255, 255, 255);"><img data-template-id="shop-4-img" class="canva-image w-full h-28 sm:h-40 object-cover" loading="lazy" src="https://images.pexels.com/photos/3489129/pexels-photo-3489129.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Floral print clothing elegantly displayed in a modern boutique">
+     <div class="p-3.5 sm:p-5">
+      <h3 data-template-id="shop-4-name" class="canva-text font-semibold mb-1 text-sm sm:text-base" style="color: rgb(17, 24, 39); font-weight: 600; font-style: normal; font-size: 19px;">Island Fashion</h3>
+      <p data-template-id="shop-4-discount" class="canva-text font-bold mb-1 text-sm sm:text-base" style="color: rgb(22, 163, 74); font-weight: 700; font-style: normal; font-size: 16px;">10% Discount</p>
+      <p data-template-id="shop-4-location" class="canva-text text-xs sm:text-sm mb-1" style="color: rgb(107, 114, 128); font-weight: 400; font-style: normal; font-size: 16px;">📍 Malé</p>
+      <p data-template-id="shop-4-condition" class="canva-text text-xs hidden sm:block" style="color: rgb(156, 163, 175); font-weight: 400; font-style: normal; font-size: 16px;">Valid on selected items</p>
+     </div>
+    </div>
+   </div>
+  </main><!-- Success Modal -->
+  <div id="success-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center modal-backdrop p-4" role="dialog" aria-modal="true">
+   <div data-template-id="modal-box" class="canva-panel modal-enter rounded-3xl p-6 sm:p-8 max-w-md w-full text-center shadow-2xl" style="background: rgb(255, 255, 255);">
+    <div class="text-5xl mb-4">
+     🎉
+    </div>
+    <h2 data-template-id="modal-title" class="canva-text font-bold mb-3" style="color: rgb(22, 101, 52); font-weight: 700; font-style: normal; font-size: 24px;">Congratulations!</h2>
+    <p data-template-id="modal-message" class="canva-text mb-6 text-sm sm:text-base" style="color: rgb(55, 65, 81); font-weight: 400; font-style: normal; font-size: 16px;">Your EcoNestBag is verified. Show this page at partner shops to claim your discount.</p><button data-template-id="modal-cta" class="canva-button px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform" id="modal-close-btn" style="background: rgb(22, 163, 74); color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">View Shops</button>
+   </div>
+  </div><!-- Error Modal -->
+  <div id="error-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center modal-backdrop p-4" role="dialog" aria-modal="true">
+   <div data-template-id="error-modal-box" class="canva-panel modal-enter rounded-3xl p-6 sm:p-8 max-w-md w-full text-center shadow-2xl" style="background: rgb(255, 255, 255);">
+    <div class="text-5xl mb-4">
+     ⚠️
+    </div>
+    <h2 data-template-id="error-modal-title" class="canva-text font-bold mb-3" style="color: rgb(185, 28, 28); font-weight: 700; font-style: normal; font-size: 24px;">Invalid Bag ID</h2>
+    <p data-template-id="error-modal-message" class="canva-text mb-6 text-sm sm:text-base" style="color: rgb(55, 65, 81); font-weight: 400; font-style: normal; font-size: 16px;">This bag ID is not recognized. Please check and try again, or contact EcoNestBag support.</p><button data-template-id="error-modal-cta" class="canva-button px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform" id="error-modal-close-btn" style="background: rgb(220, 38, 38); color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Try Again</button>
+   </div>
+  </div>
+  <footer class="text-center py-8 px-4">
+   <p data-template-id="footer-text" class="canva-text text-sm" style="color: rgb(156, 163, 175); font-weight: 400; font-style: normal; font-size: 16px;">© 2026 EcoNestBag. Reduce, Reuse, Reward.</p>
+  </footer>
+  <script src="/_sdk/editing_sdk.js"></script>
+  <script>
+    lucide.createIcons();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    const VALID_IDS = [
+      "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+      "c3d4e5f6-a7b8-9012-cdef-123456789012",
+      "d4e5f6a7-b8c9-0123-defa-234567890123",
+      "e5f6a7b8-c9d0-1234-efab-345678901234",
+      "f6a7b8c9-d0e1-2345-fabc-456789012345",
+      "a7b8c9d0-e1f2-3456-abcd-567890123456",
+      "b8c9d0e1-f2a3-4567-bcde-678901234567",
+      "c9d0e1f2-a3b4-5678-cdef-789012345678",
+      "d0e1f2a3-b4c5-6789-defa-890123456789"
+    ];
+
+    function verifyBagId(bagId) {
+      if (!bagId || bagId.trim() === '') return;
+      bagId = bagId.trim();
+      if (VALID_IDS.includes(bagId)) {
+        document.getElementById('success-modal').classList.remove('hidden');
+      } else {
+        document.getElementById('error-modal').classList.remove('hidden');
+      }
+    }
+
+    function checkBagId() {
+      let bagId = null;
+      const urlParams = new URLSearchParams(window.location.search);
+      bagId = urlParams.get('id');
+      if (!bagId && window.location.hash) {
+        const hashParams = new URLSearchParams(window.location.hash.substring(1));
+        bagId = hashParams.get('id');
+      }
+      if (!bagId) {
+        try {
+          const parentUrl = new URL(window.parent.location.href);
+          bagId = parentUrl.searchParams.get('id');
+        } catch (e) {}
+      }
+      if (!bagId && document.referrer) {
+        try {
+          const referrerUrl = new URL(document.referrer);
+          bagId = referrerUrl.searchParams.get('id');
+        } catch (e) {}
+      }
+      if (bagId) verifyBagId(bagId);
+    }
+
+    window.addEventListener('message', function(e) {
+      if (e.data && e.data.bagId) verifyBagId(e.data.bagId);
+      if (e.data && e.data.id) verifyBagId(e.data.id);
+    });
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', checkBagId);
+    } else {
+      checkBagId();
+    }
+
+    function closeModal() {
+      document.getElementById('success-modal').classList.add('hidden');
+      document.getElementById('shops').scrollIntoView({ behavior: 'smooth' });
+    }
+    function closeErrorModal() {
+      document.getElementById('error-modal').classList.add('hidden');
+    }
+
+    document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+    document.getElementById('success-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+    document.getElementById('error-modal-close-btn').addEventListener('click', closeErrorModal);
+    document.getElementById('error-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeErrorModal();
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0ace9eec3af119a',t:'MTc4MTMwOTg2Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body></html>
