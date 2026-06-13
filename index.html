@@ -6,6 +6,7 @@
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=MV+Boli&amp;display=swap" rel="stylesheet">
   <style>
     body { font-family: 'DM Sans', sans-serif; }
     .modal-backdrop { background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); }
@@ -28,6 +29,9 @@
     .step-icon {
       background: linear-gradient(135deg, #dcfce7, #bbf7d0);
       box-shadow: 0 4px 14px rgba(22,163,74,0.15);
+    }
+    .dhivehi-text {
+      font-family: 'MV Boli', sans-serif;
     }
   </style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
@@ -123,7 +127,7 @@
      🎉
     </div>
     <h2 data-template-id="modal-title" class="canva-text font-bold mb-3" style="color: rgb(22, 101, 52); font-weight: 700; font-style: normal; font-size: 24px;">Congratulations!</h2>
-    <p data-template-id="modal-message" class="canva-text mb-6 text-sm sm:text-base" style="color: rgb(55, 65, 81); font-weight: 400; font-style: normal; font-size: 16px;">Your EcoNestBag is verified. Show this page at partner shops to claim your discount.</p><button data-template-id="modal-cta" class="canva-button px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform" id="modal-close-btn" style="background: rgb(22, 163, 74); color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">View Shops</button>
+    <p data-template-id="modal-message" class="canva-text mb-6 text-sm sm:text-base" style="color: rgb(55, 65, 81);"></p><button data-template-id="modal-cta" class="canva-button px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform" id="modal-close-btn" style="background: rgb(22, 163, 74); color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">View Shops</button>
    </div>
   </div><!-- Error Modal -->
   <div id="error-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center modal-backdrop p-4" role="dialog" aria-modal="true">
@@ -167,8 +171,9 @@
       bagId = bagId.trim();
       if (BAG_REGISTRY[bagId]) {
         const bag = BAG_REGISTRY[bagId];
-        document.querySelector('[data-template-id="modal-title"]').textContent = `${bag.name} (${bag.dhivehi})`;
-        document.querySelector('[data-template-id="modal-message"]').textContent = `${bag.meaning} - Your EcoNestBag is verified. Show this page at partner shops to claim your discount.`;
+        document.querySelector('[data-template-id="modal-title"]').textContent = 'Congratulations!';
+        const modalMessage = document.querySelector('[data-template-id="modal-message"]');
+        modalMessage.innerHTML = `Your EcoNestBag has been successfully verified.<br><br><strong>Bag Series:</strong> ${bag.name} <span class="dhivehi-text">(${bag.dhivehi})</span> – ${bag.meaning}<br><strong>Status:</strong> Active ✅<br><br>Show this page at participating EcoNestBag partner shops to enjoy exclusive discounts and special offers.<br><br>Thank you for choosing a sustainable future and helping reduce plastic waste. 💚`;
         document.getElementById('success-modal').classList.remove('hidden');
       } else {
         document.getElementById('error-modal').classList.remove('hidden');
@@ -226,5 +231,5 @@
       if (e.target === this) closeErrorModal();
     });
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0ad0187a403119a',t:'MTc4MTMxMDgyOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0ad0b4cf590119a',t:'MTc4MTMxMTIyOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body></html>
